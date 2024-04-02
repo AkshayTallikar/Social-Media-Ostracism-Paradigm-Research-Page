@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Social Media Ostracism Paradigm by smpo</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Social Media Ostracism Paradigm</h1>
+        <p>A web-based experimental manipulation of ostracism and social exclusion, designed for research purposes.</p>
+        <p class="view"><a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;"href="https://github.com/smpo/socialmedia">View the Project on GitHub <small>smpo/socialmedia</small></a></p>
+        <ul>
+          <li><a href="https://github.com/smpo/socialmedia/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/smpo/socialmedia/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/smpo/socialmedia">View On <strong>GitHub</strong></a></li>
+        </ul>
+
+        <h2>Customize Code Generator</h2>
+        <div class="slider-container">
+          <div class="slider-row">
+          <div class="slider">
+            <p>Link</p>
+            <input type="text" id="textInput" placeholder="Type something..." class="text-input">
+          </div>
+          <div class="slider">
+            <p>Avatars</p>
+            <input type="range" min="0" max="82" value="41" class="slider-input" id="slider1">
+            <span style="color:rgb(0, 0, 0); font-weight:bold; font-size:18px;" class="slider-value" id="slider1-value">41</span>
+          </div>
+          <div class="slider">
+            <p>Time</p>
+            <input type="range" min="0" max="10" value="5" class="slider-input" id="slider2">
+            <span style="color:rgb(0, 0, 0); font-weight:bold; font-size:18px;" class="slider-value" id="slider2-value">5</span>
+          </div>
+          <div class="slider">
+            <p>Condition</p>
+            <input type="range" min="1" max="4" value="2" class="slider-input" id="slider3">
+            <span style="color:rgb(0, 0, 0); font-weight:bold; font-size:18px;" class="slider-value" id="slider3-value">2</span>
+          </div>
+          <button class="button-35" id="create-btn">Create</button>
+         </div>
+        </div>
+        
+        <div id="popup" class="popup">
+          <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <p style="font-size: large;">Delete All Code From Line (1 - 31) || Copy & Paste The Code Below above (line 32) In Your File </p>
+            <p style="font-size: large;">New Code: <button class="button-35" id="copy-btn">Copy Code</button></p>
+            <ul id="selected-values"></ul>
+          </div>
+        </div>
+      </header>
+      <section>
+        <h2>
+<a name="welcome" class="anchor" href="#welcome"><span class="octicon octicon-link"></span></a>Welcome</h2>
+
+<p>The Social Media Ostracism paradigm is a web-based experimental manipulation of ostracism and social exclusion, designed for research purposes. </p>
+
+<p class="p2"><img src="MainPage2.png" alt="preview"></p2>
+
+<p>On this page you can find:</p>
+
+<ul>
+<li style="font-size: medium; font-weight: bold;">Preview of the paradigm (online version)</li>
+<li style="font-size: medium; font-weight: bold;">How to use the online version of the paradigm for experimental purposes</li>
+<li style="font-size: medium; font-weight: bold;">How to download &amp; customize the study </li>
+<li style="font-size: medium; font-weight: bold;">How to install and run the downloaded versions on a personal computer</li>
+<li style="font-size: medium; font-weight: bold;">Suggestions on how to run the customized study online</li>
+</ul>
+<h2>
+<a name="try-it-out" class="anchor" href="#try-it-out"><span class="octicon octicon-link"></span></a>Try it out</h2>
+
+<p>To try out the Social Media Ostracism paradigm follow one of these links:</p>
+
+<ul>
+<li><a href="http://smpo.github.io/preview/index.html?c=1&amp;p=999" style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;">Try out random condition</a></li>
+</ul><h2>
+<a name="more-about-the-paradigm" class="anchor" href="#more-about-the-paradigm"><span class="octicon octicon-link"></span></a>More about the paradigm</h2>
+
+<p>Social media ostracism is a type of social exclusion which happens via social media websites, such as Facebook, Twitter, blogging platforms, or forums. In the paradigm, feelings of exclusion are conveyed through the number of "likes" that people receive on their personal profiles during a group intro task.</p>
+
+<p>We recommend that you end the paradigm with an online survey, which contains manipulation checks, dependent measures, and/or connection to subsequent tasks. If the entire study is conducted online and with no interruptions, the participants will be more likely to think that they are interacting with other participants (rather than computer scripts). </p>
+
+
+<h2>
+<a name="use-it-in-an-experiment" class="anchor" href="#use-it-in-an-experiment"><span class="octicon octicon-link"></span></a>Use it in an experiment</h2>
+
+<p>To use the paradigm in your own experiment without additional customization of instructions, or timing, you will only need to modify the following link:</p>
+
+<pre lang="markdown"><code>http://smpo.github.io/preview/index.html?c=XX&amp;p=YY&amp;redirect=ZZ
+</code></pre>
+
+<table>
+<thead><tr>
+<th>Substitute...</th>
+<th align="center">with...</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>XX</code></td>
+<td align="center">
+<code>1</code> for ostracism condition, <code>2</code> for inclusion, <code>3</code> for overinclusion</td>
+</tr>
+<tr>
+<td><code>YY</code></td>
+<td align="center">unique participant number</td>
+</tr>
+<tr>
+<td><code>ZZ</code></td>
+<td align="center">Encoded survey link</td>
+</tr>
+</tbody>
+</table><blockquote>
+<p>To encode your survey link, open <a href="http://smpo.github.io/dencoder/" style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;">http://smpo.github.io/dencoder/</a> paste the link to your survey in the textbox, and press "Encode." Use the encoded survey link as part of the URL in place of <code>ZZ</code>. </p>
+</blockquote>
+
+<p>If you wanted to set up the study for participant number 5, who should be in the inclusion condition, and you want to redirect the participant to a Qualtrics questionaire available under the address <a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;" href="http://fppvu.qualtrics.com/SE/?SID=SV_a9u9MdnpIRuxctT">http://fppvu.qualtrics.com/SE/?SID=SV_a9u9MdnpIRuxctT</a>, the link to the study should be as follows:</p>
+
+<pre lang="markdown"><code>http://smpo.github.io/preview/index.html?c=2&amp;p=5&amp;redirect=http%3A%2F%2Ffppvu.qualtrics.com%2FSE%2F%3FSID%3DSV_a9u9MdnpIRuxctT
+</code></pre>
+
+<p>After the paradigm is finished, the participant will be redirected to the survey link as specified by the parameter <code>ZZ</code>. Any survey link can be specified. The script will extend the survey link by additional variables that can be read out by the survey, mainly to pass on the condition, participant number. In addition, also information about the chosen avatar, the username and description provided by the participant are transmitted, these may be analysed in order to identify participants who did not take the paradigm seriously (e.g. nonsense description provided). </p>
+
+<p>In our example, the participant could be redirected to the following URL after the paradigm is finished:</p>
+
+<pre lang="markdown"><code>http://fppvu.qualtrics.com/SE/?SID=SV_a9u9MdnpIRuxctT&amp;c=2p=5&amp;av=23&amp;u=JohnDoe&amp;d=ABC
+</code></pre>
+
+<p>Which would mean that the sample participant number 5, who was in condition 2, chose JohnDoe as a username, picked avatar 23, and described himself with the text ABC.</p>
+
+<p><a href="http://smpo.github.io/Social_Media_Ostracism_MCDV.zip" style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;">Here you can download a sample Qualtrics questionaire</a>, that reads out the transmitted variables, and provides a number of follow-up questions as manipulation check. <a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;" href="https://www.qualtrics.com/support/survey-platform/survey-module/survey-tools/import-and-export-surveys/">More information about how to import a questionaire into Qualtrics</a>.</p>
+
+<h2>
+<a name="set-it-up-on-your-own-computer-or-server" class="anchor" href="#set-it-up-on-your-own-computer-or-server"><span class="octicon octicon-link"></span></a>Set it up on your own computer or server</h2>
+
+<p>For more customization, such as modified task instructions, or different timing of the paradigm, you can download the source code of the paradigm.
+<a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;"href="https://github.com/smpo/socialmedia/zipball/master">Download the code as a ZIP</a> (or <a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;" href="https://github.com/smpo/socialmedia/tarball/master">TAR</a>) file and extract the files to your computer. To run the study, open the file <code>index.html</code> in an internet browser. By default, an internet connection will still be necessary as not all Javascript libraries are included in the ZIP file. </p>
+
+<p>By customizing the code, you can easily make changes to the following parameters: </p>
+
+<ul>
+<li>The task instructions</li>
+<li>Avatar pool from which the participant can choose their own avatar</li>
+<li>Number of people the participant "interacts" with</li>
+<li>Profiles (avatars + descriptions) of other group members</li>
+<li>Number of "likes" received by the participant and other group members</li>
+<li>Change the word "like" to another word or symbol</li>
+</ul><h2>
+<a name="to-adjust-various-settings" class="anchor" href="#to-adjust-various-settings"><span class="octicon octicon-link"></span></a>To adjust various settings:</h2>
+
+<ol>
+<li>Open the file <code>main.js</code> (from the folder on your computer) in a source code editor (e.g. Notepad) </li>
+<li>In the beginning of the code, variables for settings are defined, including the length of the task, and the number of likes participants reveice in each condition. Comments explaining the variables are provided in the code.
+4 Change variables in the <code>main.js</code> file on your computer (using the editor), according to the instructions document</li>
+<li>Save the changes made to the <code>main.js</code> document</li>
+</ol><p><a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;" href="http://smpo.github.io/annotated-mainjs/">Click here for an annotated version of main.js</a>, as an quick online reference.</p>
+
+<h2>
+<a name="to-change-the-study-instructions" class="anchor" href="#to-change-the-study-instructions"><span class="octicon octicon-link"></span></a>To change the study instructions:</h2>
+
+<p>Similarly, to edit task instructions, open the file <code>index.html</code> on your computer with an edtitor. Edit the task instructions according to the instructions provided within the document, and save your changes.</p>
+
+<p><a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;" href="http://smpo.github.io/annotated-indexhtml/">Click here for an annotated version of index.html</a>, as an quick online reference.</p>
+
+<h2>
+<a name="to-change-the-group-member-profiles-descriptions-and-avatars" class="anchor" href="#to-change-the-group-member-profiles-descriptions-and-avatars"><span class="octicon octicon-link"></span></a>To change the group member profiles (descriptions and avatars):</h2>
+
+<p>To change the group member profiles (descriptions and avatars) open the file <code>profiles.json</code> in an editor, and adjust the contents to your needs. </p>
+
+<p>The following scheme describes a group member, his avatar, description and the likes he receives.</p>
+
+<div class="highlight"><pre><span class="p">{</span>
+        <span class="nt">"username"</span><span class="p">:</span> <span class="s2">"Georgeee"</span><span class="p">,</span>
+        <span class="nt">"avatar"</span><span class="p">:</span> <span class="s2">"avatars/others/george.png"</span><span class="p">,</span>
+        <span class="nt">"text"</span><span class="p">:</span> <span class="s2">"I'm a 19 year old dude from Wisconsin (commence making fun of my accent). I love music and lately you can catch me listening to nothing but Joy Division, Echo &amp; the bunnymen, and the smiths. Besides music I like learning languages, psychology, drawing, and writing."</span><span class="p">,</span>
+        <span class="nt">"likes"</span><span class="p">:</span> <span class="p">[</span><span class="mi">45000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">110000</span><span class="p">,</span> <span class="mi">150000</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>According to this code, the group member will be called Georgeee, and he will have an avatar image with the filename george.png placed in the folder avatars, subfolder others. Georgeee will reveive 4 likes overall for his description, at 45s (45000ms), 50s, 110s and 150s.</p>
+
+<p>Note that the personal description needs to be entered without line breaks, as it appears in the default descriptions. To change the number of "likes" in each condition, add or remove timepoints. Make sure that every timepoint is preceded by a single comma. The likes entry should not be empty or left out. If you want to create a member that does not receive any likes, simply change the timepoints to high values (longer than the time of the task).</p>
+
+<p>The avatars used in the previews are not meant for redistribution and thus not included in the version for download. You will thus need to create your own avatars.All avatars have to be 250x250px, placed in the subfolder "others" (located inside the folder "avatars" in the main study folder you extracted on your computer or server). Note that the names of the image files must exactly match the names in the source code (including whether the file extension is upper or lower case). </p>
+
+<h2>
+<a name="running-the-study-from-your-own-server" class="anchor" href="#running-the-study-from-your-own-server"><span class="octicon octicon-link"></span></a>Running the study from your own server:</h2>
+
+<p>The task can be easily made available online, as it runs in a browser and has minimal server requirements. Any server that allows hosting of static webpages should work, and offers at least 5 MB of disk space should do, meaning that it can potentially be hosted for free. The files from the computer are transferred to the remote server for example by means of a FTP program. </p>
+
+<h2>
+<a name="question-and-issues" class="anchor" href="#question-and-issues"><span class="octicon octicon-link"></span></a>Question and Issues</h2>
+
+<p>You can <a style="color:rgb(8, 111, 229); font-weight:bold; font-size:18px;" href="https://github.com/smpo/socialmedia/issues/new">submit a new question question or issue</a> using GitHub.</p>
+
+<h2>
+<a name="citation" class="anchor" href="#citation"><span class="octicon octicon-link"></span></a>Citation</h2>
+<p>Wolf, W., Levordashka, A., Ruff, J. R., Kraaijeveld, S., Lueckmann, J.-M., &amp; Williams, K. D. (2014). Ostracism Online: A social media ostracism paradigm. <em>Behavior Research Methods.</em> Advance online publication. <a href="http://dx.doi.org/10.3758/s13428-014-0475-x">doi:10.3758/s13428-014-0475-x</a></p>
+
+      </section>
+    </div>
+    <script src="scale.fix.js"></script>
+    
+  </body>
+</html>
