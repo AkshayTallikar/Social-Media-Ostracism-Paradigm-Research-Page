@@ -32,6 +32,24 @@ const popup = document.getElementById('popup');
 const closeBtn = document.querySelector('.close-btn');
 const selectedValuesList = document.getElementById('selected-values');
 
+const createConditionBtn = document.getElementById('create-btn2');
+const popup2 = document.getElementById('popup2');
+const closeBtn2 = document.querySelector('.close-btn2');
+document.getElementById("create-btn2").addEventListener("click", function() {
+  var textInputValue = document.getElementById("textInput2").value;
+  var textInputValue2 = document.getElementById("textInput3").value;
+  console.log(textInputValue);
+  console.log(textInputValue2);
+
+  document.getElementById("textInput2").value = "";
+  document.getElementById("textInput3").value = "";
+
+});
+document.getElementById("create-btn3").addEventListener("click", function() {
+
+  document.getElementById("popup2").style.display = "block";
+});
+
 // Show popup and display selected values when create button is clicked
 document.getElementById("create-btn").addEventListener("click", function() {
   var slider1Value = document.getElementById("slider1").value;
@@ -79,17 +97,48 @@ document.getElementById("create-btn").addEventListener("click", function() {
   // Displaying the popup
   document.getElementById("popup").style.display = "block";
 
+
+  // Add event listener for the copy button (only once)
   var copyBtn = document.getElementById("copy-btn");
-copyBtn.addEventListener("click", function() {
-  navigator.clipboard.writeText(codestring)
-    .then(() => {
-      alert("Code copied to clipboard!");
-    })
-    .catch((err) => {
-      console.error("Failed to copy code: ", err);
+  var copyBtnEventAdded = false;
+
+  if (!copyBtnEventAdded) {
+    copyBtn.addEventListener("click", function() {
+      navigator.clipboard.writeText(codestring)
+        .then(() => {
+          showTopAlert("Code copied to clipboard!");
+        })
+        .catch((err) => {
+          showTopAlert("Failed to copy code: " + err);
+        });
     });
+    copyBtnEventAdded = true;
+  }
 });
-});
+
+// Function to show an alert at the top of the screen
+function showTopAlert(message) {
+  // Create a new div element for the alert
+  var alertDiv = document.createElement("div");
+  alertDiv.style.position = "fixed";
+  alertDiv.style.top = "0";
+  alertDiv.style.left = "50%";
+  alertDiv.style.transform = "translateX(-50%)";
+  alertDiv.style.padding = "10px";
+  alertDiv.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  alertDiv.style.color = "white";
+  alertDiv.style.zIndex = "9999";
+  alertDiv.textContent = message;
+
+  // Append the alert div to the document body
+  document.body.appendChild(alertDiv);
+
+  // Remove the alert after 3 seconds
+  setTimeout(function() {
+    alertDiv.remove();
+  }, 3000);
+}
+
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
