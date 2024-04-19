@@ -225,6 +225,31 @@ header ul a {
   max-height: calc(100vh - 100px); /* Limit max height based on viewport height */
   overflow-y: auto; /* Add vertical scrollbar when content overflows */
 }
+.popup-content2 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh; /* Set height for popup content */
+  max-height: calc(100vh - 100px); /* Limit max height based on viewport height */
+  overflow-y: auto; /* Add vertical scrollbar when content overflows */
+}
+
+.options label {
+  font-size: 18px; /* Increased font size */
+  font-weight: bold; /* Made the text bold */
+  margin-left: 10px;
+}
+
+.options input[type="checkbox"] {
+  transform: scale(1.5); /* Increased the size of the checkboxes */
+}
 
 /* CSS */
 .button-35 {

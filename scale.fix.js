@@ -35,28 +35,48 @@ const selectedValuesList = document.getElementById('selected-values');
 const createConditionBtn = document.getElementById('create-btn2');
 const popup2 = document.getElementById('popup2');
 const closeBtn2 = document.querySelector('.close-btn2');
+var customOptions = [];
+var selectedValues = [];
 document.getElementById("create-btn2").addEventListener("click", function() {
   var textInputValue = document.getElementById("textInput2").value;
   var textInputValue2 = document.getElementById("textInput3").value;
   console.log(textInputValue);
   console.log(textInputValue2);
 
+  // Create a new option based on the input values
+  var newOption = {
+    label: `${textInputValue} likes - ${textInputValue2} dislikes`,
+    value: `${textInputValue},${textInputValue2}`
+  };
+  customOptions.push(newOption);
+
+  // Update the popup with the new options
+  updatePopupOptions();
+
   document.getElementById("textInput2").value = "";
   document.getElementById("textInput3").value = "";
-
 });
-document.getElementById("create-btn3").addEventListener("click", function() {
-
-  document.getElementById("popup2").style.display = "block";
+document.getElementById("submit-button").addEventListener("click", function() {
+  selectedValues = [];
+  // Get the selected options
+  var selectedOptions = document.querySelectorAll('input[name="options"]:checked');
+  selectedOptions.forEach(function(option) {
+    selectedValues.push(option.value);
+  });
+  if (selectedValues.length > 0) {
+     console.log(selectedValues);
+  } else {
+    alert("Please select at least one option.");
+  }
+  document.getElementById("popup2").style.display = "none";
 });
 
-// Show popup and display selected values when create button is clicked
 document.getElementById("create-btn").addEventListener("click", function() {
   var slider1Value = document.getElementById("slider1").value;
   var slider2Value = document.getElementById("slider2").value;
-  var slider3Value = document.getElementById("slider3").value;
   var textInputValue = document.getElementById("textInput").value;
 
+ 
   // Creating the function set_settings() dynamically
   var codestring = '$(function() {\n';
   codestring += '  //GLOBAL VARIABLES\n';
@@ -67,16 +87,13 @@ document.getElementById("create-btn").addEventListener("click", function() {
   codestring += '  var countlike = 0;\n';
   codestring += '  var countDislike = 0;\n';
   codestring += '  var conditions = {\n';
-  codestring += '    // Condition 1 settings\n';
-  codestring += '    1: { likes: [10000,20000,35000,45000,60000,78000,80000,100000,132000], dislikes: [] },\n';
-  codestring += '    // Condition 2 settings\n';
-  codestring += '    2: { likes: [10000,35000,80000,100000,132000,150000], dislikes: [] },\n';
-  codestring += '    // Condition 3 settings\n';
-  codestring += '    3: { likes: [10000,12000,13000], dislikes: [11111,12222,13333] },\n';
-  codestring += '    // Condition 4 settings\n';
-  codestring += '    4: { likes: [], dislikes: [10000,35000,80000,100000,132000,150000] },\n';
-  codestring += '  };\n';
-  codestring += '  var assignedConditionNumber = ' + slider3Value + ';\n';
+  selectedValues.forEach(function(option, index) {
+    var [likes, dislikes] = option.split(',').map(Number);
+    codestring += ` // Condition ${index + 1} settings\n`;
+    codestring += ` ${index + 1}: { likes: [${generateLikesArray(likes,slider2Value * 60000)}], dislikes: [${generateLikesArray(dislikes,slider2Value * 60000)}] },\n`;
+  });
+  codestring += '};\n';
+  codestring += '  var assignedConditionNumber = ' + "1" + ';\n';
   codestring += ' function set_settings() {\n';
   codestring += '  window.settings = [];\n';
   codestring += '  settings.numberofavatars = ' + slider1Value + '; \n';
@@ -88,7 +105,6 @@ document.getElementById("create-btn").addEventListener("click", function() {
   codestring += '  window.query_string = null;\n';
   codestring += '}';
 
-  // Displaying the codestring
   var codestringElement = document.createElement("codestring");
   codestringElement.textContent = codestring;
   document.getElementById("selected-values").innerHTML = ''; // Clear previous content
@@ -115,6 +131,55 @@ document.getElementById("create-btn").addEventListener("click", function() {
     copyBtnEventAdded = true;
   }
 });
+
+function updatePopupOptions() {
+  var customOptionsDiv = document.querySelector(".custom-options");
+  customOptionsDiv.innerHTML = "";
+
+  customOptions.forEach(function(option, index) {
+    var optionDiv = document.createElement("div");
+    optionDiv.classList.add("options");
+    optionDiv.innerHTML = `
+      <input type="checkbox" id="custom-option-${index}" name="options" value="${option.value}">
+      <label for="custom-option-${index}">${option.label}</label>
+    `;
+    customOptionsDiv.appendChild(optionDiv);
+  });
+}
+
+document.getElementById("create-btn3").addEventListener("click", function() {
+  document.getElementById("popup2").style.display = "block";
+});
+
+document.getElementsByClassName("close-button")[0].addEventListener("click", function() {
+  document.getElementById("popup2").style.display = "none";
+});
+
+
+
+function generateLikesArray(numLikes, maxValue) {
+  const likesArray = [];
+
+  if (numLikes > 0 && maxValue > 0) {
+    let remainingLikes = numLikes;
+    let remainingTime = maxValue;
+
+    while (remainingLikes > 0) {
+      const portionTime = Math.floor(remainingTime / remainingLikes); // Divide remaining time into equal portions
+      const randomTime = Math.floor(Math.random() * portionTime) + 1; // Random time within the portion
+      
+      // Adjust remaining time and likes for next portion
+      remainingTime -= randomTime;
+      remainingLikes--;
+
+      likesArray.push(maxValue - remainingTime); // Push current time to array
+    }
+  }
+
+  return likesArray;
+}
+// Show popup and display selected values when create button is clicked
+
 
 // Function to show an alert at the top of the screen
 function showTopAlert(message) {

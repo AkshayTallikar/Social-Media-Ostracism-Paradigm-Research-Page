@@ -42,11 +42,6 @@
             <span style="color:rgb(0, 0, 0); font-weight:bold; font-size:18px;" class="slider-value" id="slider2-value">5</span>
           </div>
           <div class="slider">
-            <p>Condition</p>
-            <input type="range" min="1" max="4" value="2" class="slider-input" id="slider3">
-            <span style="color:rgb(0, 0, 0); font-weight:bold; font-size:18px;" class="slider-value" id="slider3-value">2</span>
-          </div>
-          <div class="slider">
             <p>Add A Condition Likes/Dislikes</p>
             <input type="text" id="textInput2" placeholder="#Likes" class="text-input2">
             <input type="text" id="textInput3" placeholder="#Dislikes" class="text-input2">
@@ -54,6 +49,34 @@
           <div>
             <button class="button-35" id="create-btn2">Add Condition</button>
             <button class="button-35" id="create-btn3">View Condition</button>
+            <div id="popup2" class="popup">
+              <div class="popup-content2">
+                <span class="close-button">&times;</span>
+                <h2>Select From Original Conditions</h2>
+                <div class="options">
+                  <div><input type="checkbox" id="option1" name="options" value="9,0">
+                    <label for="option1">[9 Likes-0 Dislikes]</label>
+                  </div>
+                  <div>
+                  <input type="checkbox" id="option2" name="options" value="6,0">
+                  <label for="option2">[6 Likes-0 Dislikes]</label>
+                  </div>
+                  <div>
+                  <input type="checkbox" id="option3" name="options" value="3,3">
+                  <label for="option3">[3 Likes-3 Dislikes]</label>
+                  </div>
+                  <div>
+                  <input type="checkbox" id="option4" name="options" value="0,6">
+                  <label for="option4">[0 Likes-6 Dislikes]</label>
+                </div>
+                </div>
+                <br></br> 
+                <h2>Select From Added Options</h2>
+                <div class="custom-options"></div>
+                <br></br>
+                <button class="button-35" id="submit-button">Submit</button>
+              </div>
+            </div>
           </div>
           <button class="button-35" id="create-btn">Create</button>
          </div>
@@ -65,12 +88,6 @@
             <p style="font-size: large;">Delete All Code From Line (1 - 31) || Copy & Paste The Code Below above (line 32) In Your File </p>
             <p style="font-size: large;">New Code: <button class="button-35" id="copy-btn">Copy Code</button></p>
             <ul id="selected-values"></ul>
-          </div>
-        </div>
-        <div id="popup2" class="popup">
-          <div class="popup-content">
-            <span class="close-btn2">&times;</span>
-            <p style="font-size: large;">Select The Conditions You Want</p>
           </div>
         </div>
       </header>
